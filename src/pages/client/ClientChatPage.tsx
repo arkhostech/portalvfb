@@ -4,41 +4,20 @@ import { User, Send } from 'lucide-react'
 const dummyConversations = [
   {
     id: 1,
-    name: 'Carlos Silva',
-    lastMessage: 'Obrigado pelo retorno!',
-    lastTime: '10:32',
-    unread: 2,
-    messages: [
-      { from: 'client', text: 'Olá, gostaria de saber sobre meu reembolso.', time: '10:00' },
-      { from: 'admin', text: 'Olá Carlos! Seu reembolso está em análise.', time: '10:05' },
-      { from: 'client', text: 'Obrigado pelo retorno!', time: '10:32' }
-    ]
-  },
-  {
-    id: 2,
-    name: 'Maria Silva',
-    lastMessage: 'Enviei os documentos!',
-    lastTime: '09:50',
+    name: 'Atendimento VFB',
+    lastMessage: 'Estamos à disposição para ajudar!',
+    lastTime: 'Agora',
     unread: 0,
     messages: [
-      { from: 'client', text: 'Enviei os documentos!', time: '09:50' },
-      { from: 'admin', text: 'Recebido, Maria! Vamos analisar.', time: '09:51' }
-    ]
-  },
-  {
-    id: 3,
-    name: 'Ana Souza',
-    lastMessage: 'Posso marcar consulta?',
-    lastTime: 'Ontem',
-    unread: 1,
-    messages: [
-      { from: 'client', text: 'Posso marcar consulta?', time: 'Ontem' },
-      { from: 'admin', text: 'Claro! Qual especialidade?', time: 'Ontem' }
+      { from: 'admin', text: 'Olá! Como podemos ajudar você hoje?', time: '09:00' },
+      { from: 'client', text: 'Olá, gostaria de saber sobre meu reembolso.', time: '09:01' },
+      { from: 'admin', text: 'Seu reembolso está em análise, qualquer dúvida estamos à disposição!', time: '09:05' },
+      { from: 'client', text: 'Obrigado pelo retorno!', time: '09:10' }
     ]
   }
 ]
 
-export default function ChatPage() {
+export default function ClientChatPage() {
   const [selected, setSelected] = useState(0)
   const [input, setInput] = useState('')
   const conversation = dummyConversations[selected]
@@ -47,7 +26,7 @@ export default function ChatPage() {
     <div className="flex h-[70vh] bg-white rounded-xl shadow-lg border border-vfb-gray-100 overflow-hidden">
       {/* Lista de conversas */}
       <aside className="w-1/3 min-w-[220px] max-w-xs bg-vfb-bg-card border-r border-vfb-gray-100 flex flex-col">
-        <div className="p-4 border-b border-vfb-gray-100 font-bold text-vfb-blue-900 text-lg">Conversas</div>
+        <div className="p-4 border-b border-vfb-gray-100 font-bold text-vfb-blue-900 text-lg">Atendimento</div>
         <div className="flex-1 overflow-y-auto">
           {dummyConversations.map((conv, idx) => (
             <button
@@ -80,8 +59,8 @@ export default function ChatPage() {
         </div>
         <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-vfb-bg-card">
           {conversation.messages.map((msg, idx) => (
-            <div key={idx} className={`flex ${msg.from === 'admin' ? 'justify-end' : 'justify-start'}`}>
-              <div className={`rounded-xl px-4 py-2 max-w-xs text-sm shadow ${msg.from === 'admin' ? 'bg-vfb-blue-600 text-white' : 'bg-white border border-vfb-gray-100 text-vfb-text-primary'}`}>
+            <div key={idx} className={`flex ${msg.from === 'client' ? 'justify-end' : 'justify-start'}`}>
+              <div className={`rounded-xl px-4 py-2 max-w-xs text-sm shadow ${msg.from === 'client' ? 'bg-vfb-blue-600 text-white' : 'bg-white border border-vfb-gray-100 text-vfb-text-primary'}`}>
                 {msg.text}
                 <div className="text-xs text-vfb-text-tertiary mt-1 text-right">{msg.time}</div>
               </div>

@@ -11,12 +11,12 @@ import {
   Menu,
   X,
   LogOut,
-  Download,
   Phone,
   HelpCircle,
   CreditCard,
   Search,
-  Bell
+  Bell,
+  MessageSquare
 } from 'lucide-react'
 
 interface ClientLayoutProps {
@@ -35,6 +35,7 @@ const ClientLayout = ({ children }: ClientLayoutProps) => {
     { name: 'Documentos e Resumos', href: '/client/documents', icon: FileText },
     { name: 'Faturamento e Pagamentos', href: '/client/payments', icon: CreditCard },
     { name: 'Encontrar Médicos', href: '/client/find-doctors', icon: Search },
+    { name: 'Chat', href: '/client/chat', icon: MessageSquare },
     { name: 'Notificações', href: '/client/notifications', icon: Bell },
   ]
 
