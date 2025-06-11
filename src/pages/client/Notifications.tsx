@@ -13,7 +13,6 @@ import {
   Shield,
   Building2,
   Star,
-  Clock,
   AlertTriangle,
   CheckCircle,
   Info,
