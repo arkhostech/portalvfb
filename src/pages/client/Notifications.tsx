@@ -19,9 +19,9 @@ import {
   Info,
   Settings,
   Trash2,
-  MarkAsUnread,
   Archive,
   Mail,
+  MailOpen,
   Phone,
   Smartphone,
   Eye

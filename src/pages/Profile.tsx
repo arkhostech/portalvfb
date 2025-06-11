@@ -440,7 +440,7 @@ export default function Profile() {
                 <div className="text-sm text-vfb-text-tertiary">Google Authenticator ou similar</div>
               </div>
             </div>
-            <Button variant={formData.twoFactorEnabled ? "outline-destructive" : "outline-primary"} size="sm">
+            <Button variant={formData.twoFactorEnabled ? "destructive" : "outline-primary"} size="sm">
               {formData.twoFactorEnabled ? "Desativar" : "Configurar"}
             </Button>
           </div>
@@ -478,7 +478,7 @@ export default function Profile() {
             </div>
             <select
               value={formData.sessionTimeout}
-              onChange={(e) => handleInputChange('sessionTimeout', parseInt(e.target.value))}
+              onChange={(e) => handleInputChange('sessionTimeout', e.target.value)}
               className="p-2 border border-vfb-gray-300 rounded-lg focus:ring-2 focus:ring-vfb-blue-500 focus:border-transparent"
             >
               <option value={15}>15 minutos</option>
@@ -671,7 +671,7 @@ export default function Profile() {
                 Remover permanentemente sua conta e dados
               </div>
             </div>
-            <Button variant="outline-destructive" size="sm">
+            <Button variant="destructive" size="sm">
               <Trash2 className="h-4 w-4 mr-2" />
               Excluir
             </Button>

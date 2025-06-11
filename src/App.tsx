@@ -34,6 +34,7 @@ import ClientProfile from '@/pages/client/Profile'
 import ClientHelp from '@/pages/client/Help'
 import ClientNotifications from '@/pages/client/Notifications'
 import ClientFindDoctors from '@/pages/client/FindDoctors'
+import ClientChatPage from '@/pages/client/ClientChatPage'
 
 function App() {
   return (
@@ -291,6 +292,16 @@ function App() {
             <ProtectedRoute allowedRoles={['client']}>
               <ClientLayout>
                 <ClientHelp />
+              </ClientLayout>
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/client/chat" 
+          element={
+            <ProtectedRoute allowedRoles={['client']}>
+              <ClientLayout>
+                <ClientChatPage />
               </ClientLayout>
             </ProtectedRoute>
           } 
